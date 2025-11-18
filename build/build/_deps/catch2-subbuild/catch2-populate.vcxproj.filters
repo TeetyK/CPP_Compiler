@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="F:\Compiler_TT\build\build\_deps\catch2-subbuild\CMakeFiles\6eff678f5fd8d501294fa013d3c72be8\catch2-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\Compiler_TT\build\build\_deps\catch2-subbuild\CMakeFiles\6eff678f5fd8d501294fa013d3c72be8\catch2-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\Compiler_TT\build\build\_deps\catch2-subbuild\CMakeFiles\6eff678f5fd8d501294fa013d3c72be8\catch2-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\Compiler_TT\build\build\_deps\catch2-subbuild\CMakeFiles\6eff678f5fd8d501294fa013d3c72be8\catch2-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\Compiler_TT\build\build\_deps\catch2-subbuild\CMakeFiles\6eff678f5fd8d501294fa013d3c72be8\catch2-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\Compiler_TT\build\build\_deps\catch2-subbuild\CMakeFiles\6eff678f5fd8d501294fa013d3c72be8\catch2-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\Compiler_TT\build\build\_deps\catch2-subbuild\CMakeFiles\6eff678f5fd8d501294fa013d3c72be8\catch2-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\Compiler_TT\build\build\_deps\catch2-subbuild\CMakeFiles\6eff678f5fd8d501294fa013d3c72be8\catch2-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\Compiler_TT\build\build\_deps\catch2-subbuild\CMakeFiles\c07cb2f6b45db3c65d20c91ca8af7a52\catch2-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\Compiler_TT\build\build\_deps\catch2-subbuild\CMakeFiles\84cde437e074233ec426705ab3cfb001\catch2-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\Compiler_TT\build\build\_deps\catch2-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="F:\Compiler_TT\build\build\_deps\catch2-subbuild\CMakeFiles\catch2-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E3E0639B-DFFC-3592-A570-4C387FF14F71}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

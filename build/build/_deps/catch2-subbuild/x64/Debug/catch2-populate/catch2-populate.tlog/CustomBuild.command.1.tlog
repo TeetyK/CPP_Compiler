@@ -1,0 +1,150 @@
+^F:\COMPILER_TT\BUILD\BUILD\_DEPS\CATCH2-SUBBUILD\CMAKEFILES\6EFF678F5FD8D501294FA013D3C72BE8\CATCH2-POPULATE-MKDIR.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P F:/Compiler_TT/build/build/_deps/catch2-subbuild/catch2-populate-prefix/tmp/catch2-populate-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch F:/Compiler_TT/build/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/Debug/catch2-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\COMPILER_TT\BUILD\BUILD\_DEPS\CATCH2-SUBBUILD\CMAKEFILES\6EFF678F5FD8D501294FA013D3C72BE8\CATCH2-POPULATE-DOWNLOAD.RULE
+setlocal
+cd F:\Compiler_TT\build\build\_deps
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P F:/Compiler_TT/build/build/_deps/catch2-subbuild/catch2-populate-prefix/tmp/catch2-populate-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch F:/Compiler_TT/build/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/Debug/catch2-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\COMPILER_TT\BUILD\BUILD\_DEPS\CATCH2-SUBBUILD\CMAKEFILES\6EFF678F5FD8D501294FA013D3C72BE8\CATCH2-POPULATE-UPDATE.RULE
+setlocal
+cd F:\Compiler_TT\build\build\_deps\catch2-src
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -Dcan_fetch=YES -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P F:/Compiler_TT/build/build/_deps/catch2-subbuild/catch2-populate-prefix/tmp/catch2-populate-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\COMPILER_TT\BUILD\BUILD\_DEPS\CATCH2-SUBBUILD\CMAKEFILES\6EFF678F5FD8D501294FA013D3C72BE8\CATCH2-POPULATE-PATCH.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch F:/Compiler_TT/build/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/Debug/catch2-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\COMPILER_TT\BUILD\BUILD\_DEPS\CATCH2-SUBBUILD\CMAKEFILES\6EFF678F5FD8D501294FA013D3C72BE8\CATCH2-POPULATE-CONFIGURE.RULE
+setlocal
+cd F:\Compiler_TT\build\build\_deps\catch2-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch F:/Compiler_TT/build/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/Debug/catch2-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\COMPILER_TT\BUILD\BUILD\_DEPS\CATCH2-SUBBUILD\CMAKEFILES\6EFF678F5FD8D501294FA013D3C72BE8\CATCH2-POPULATE-BUILD.RULE
+setlocal
+cd F:\Compiler_TT\build\build\_deps\catch2-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch F:/Compiler_TT/build/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/Debug/catch2-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\COMPILER_TT\BUILD\BUILD\_DEPS\CATCH2-SUBBUILD\CMAKEFILES\6EFF678F5FD8D501294FA013D3C72BE8\CATCH2-POPULATE-INSTALL.RULE
+setlocal
+cd F:\Compiler_TT\build\build\_deps\catch2-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch F:/Compiler_TT/build/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/Debug/catch2-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\COMPILER_TT\BUILD\BUILD\_DEPS\CATCH2-SUBBUILD\CMAKEFILES\6EFF678F5FD8D501294FA013D3C72BE8\CATCH2-POPULATE-TEST.RULE
+setlocal
+cd F:\Compiler_TT\build\build\_deps\catch2-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch F:/Compiler_TT/build/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/Debug/catch2-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\COMPILER_TT\BUILD\BUILD\_DEPS\CATCH2-SUBBUILD\CMAKEFILES\C07CB2F6B45DB3C65D20C91CA8AF7A52\CATCH2-POPULATE-COMPLETE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory F:/Compiler_TT/build/build/_deps/catch2-subbuild/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch F:/Compiler_TT/build/build/_deps/catch2-subbuild/CMakeFiles/Debug/catch2-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch F:/Compiler_TT/build/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/Debug/catch2-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\COMPILER_TT\BUILD\BUILD\_DEPS\CATCH2-SUBBUILD\CMAKEFILES\84CDE437E074233EC426705AB3CFB001\CATCH2-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\COMPILER_TT\BUILD\BUILD\_DEPS\CATCH2-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/Compiler_TT/build/build/_deps/catch2-subbuild -BF:/Compiler_TT/build/build/_deps/catch2-subbuild --check-stamp-file F:/Compiler_TT/build/build/_deps/catch2-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

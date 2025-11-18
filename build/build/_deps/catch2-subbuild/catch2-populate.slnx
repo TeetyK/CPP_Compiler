@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Solution>
+	<Configurations>
+		<BuildType Name="Debug"/>
+		<Platform Name="x64"/>
+	</Configurations>
+	<Folder Name="/CMakePredefinedTargets/">
+		<Project Path="ALL_BUILD.vcxproj" Id="6d98b971-53b7-3539-b1a7-9af2757e8ff2">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="catch2-populate.vcxproj"/>
+			<Build Solution="Debug|*" Project="false"/>
+		</Project>
+		<Project Path="ZERO_CHECK.vcxproj" Id="2116005f-69bf-3231-9716-2db5eec6a288"/>
+	</Folder>
+	<Folder Name="/ExternalProjectTargets/"/>
+	<Folder Name="/ExternalProjectTargets/catch2-populate/">
+		<Project Path="catch2-populate.vcxproj" Id="4d5995f2-5d9e-380a-923d-18bdfcd693ac">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		</Project>
+	</Folder>
+</Solution>
