@@ -1,18 +1,8 @@
 #include "lexer.h"
-enum Token {
-    tok_eof = -1,
-    // command
-    tok_def = -2,
-    tok_extern = -3,
-    // primary
-    tok_identifier = -4,
-    tok_number = -5,
-};
+std::string IdentifierStr;
+double NumVal;
 
-static std::string IdentifierStr;
-static double NumVal;
-
-static int gettok(){
+int gettok(){
     static int LastChar = ' ';
     // skip while space
     while(isspace(LastChar)){
@@ -22,25 +12,23 @@ static int gettok(){
     if(isalpha(LastChar)){
         IdentifierStr = LastChar;
         while(isalnum(LastChar = getchar())){
-            IdentifierStr +=LastChar
+            IdentifierStr +=LastChar;
         }
-        if(IdentifierStr=="def")
-            return tok_def;
-        if(IdentifierStr=="extern")
-            return tok_extern
-        return tok_identifier
+        if(IdentifierStr=="def"){return tok_def;}
+        if(IdentifierStr=="extern"){return tok_extern;}
+        return tok_identifier;
     }
-    if(isdigit(LastChar) || LastChar == "."){ // Number : [0-9.]+
+    if(isdigit(LastChar) || LastChar == '.'){ // Number : [0-9.]+
         std::string NumStr;
         do{
             NumStr+=LastChar;
             LastChar = getchar();
-        }while(isdigit(LastChar) || LastChar==".");
+        }while(isdigit(LastChar) || LastChar=='.');
         NumVal = strtod(NumStr.c_str(),0);
-        return tok_number
+        return tok_number;
     }
 
-    if(LastChar == "#"){
+    if(LastChar == '#'){
         do{
             LastChar = getchar();
         }
