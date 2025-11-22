@@ -1,4 +1,5 @@
 #include "lexer.h"
+#include "AST.h"
 //===----------------------------------------------------------------------===//
 // Abstract Syntax Tree (aka Parse Tree)
 //===----------------------------------------------------------------------===//
@@ -9,6 +10,7 @@ namespace {
 class ExprAST {
 public:
   virtual ~ExprAST() = default;
+  virtual double interpret() const = 0;
 };
 
 /// NumberExprAST - Expression class for numeric literals like "1.0".
@@ -17,6 +19,7 @@ class NumberExprAST : public ExprAST {
 
 public:
   NumberExprAST(double Val) : Val(Val) {}
+  double interpret() const override { return Val; }
 };
 
 /// VariableExprAST - Expression class for referencing a variable, like "a".
@@ -25,6 +28,7 @@ class VariableExprAST : public ExprAST {
 
 public:
   VariableExprAST(const std::string &Name) : Name(Name) {}
+  double interpret() const override;
 };
 
 /// BinaryExprAST - Expression class for a binary operator.
@@ -36,6 +40,7 @@ public:
   BinaryExprAST(char Op, std::unique_ptr<ExprAST> LHS,
                 std::unique_ptr<ExprAST> RHS)
       : Op(Op), LHS(std::move(LHS)), RHS(std::move(RHS)) {}
+  double interpret() const override;
 };
 
 /// CallExprAST - Expression class for function calls.
@@ -47,6 +52,7 @@ public:
   CallExprAST(const std::string &Callee,
               std::vector<std::unique_ptr<ExprAST>> Args)
       : Callee(Callee), Args(std::move(Args)) {}
+    double interpret() const override;
 };
 
 /// PrototypeAST - This class represents the "prototype" for a function,
@@ -72,6 +78,9 @@ public:
   FunctionAST(std::unique_ptr<PrototypeAST> Proto,
               std::unique_ptr<ExprAST> Body)
       : Proto(std::move(Proto)), Body(std::move(Body)) {}
+  double interpret() const {
+    return Body->interpret();
+  }
 };
 
 } // end anonymous namespace
@@ -312,8 +321,11 @@ static void HandleExtern() {
 
 static void HandleTopLevelExpression() {
   // Evaluate a top-level expression into an anonymous function.
-  if (ParseTopLevelExpr()) {
+  if (auto FnAST = ParseTopLevelExpr()) {
+    double Result = FnAST->interpret();
+    
     fprintf(stderr, "Parsed a top-level expr\n");
+    std::cout << "Intepret Result: " << Result << "\n";
   } else {
     // Skip token for error recovery.
     getNextToken();

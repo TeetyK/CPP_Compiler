@@ -17,7 +17,23 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 find_package(CLI11 CONFIG REQUIRED)
 find_package(Catch2 3 REQUIRED NO_VERSION_CHECK)
-add_executable(program_main src/main.cpp)
+# find_package(LLVM REQUIRED CONFIG)
+# set(LLVM_LINK_LIBS
+#     LLVM:Core
+#     LLVM:Analysis
+#     LLVM:Target
+#     LLVM:TargetMachine
+#     LLVM:MC
+#     LLVM:PassManager
+#     LLVM:IReader
+# )
+add_executable(program_main 
+    src/main.cpp
+    # src/lexer.cpp
+    # src/parseTree.cpp
+    # src/AST.cpp
+
+)
 
 
 target_link_libraries(program_main PRIVATE
@@ -25,6 +41,7 @@ target_link_libraries(program_main PRIVATE
     # Catch2WithMain
     # Catch2::Catch2WithMain
     Catch2::Catch2 # TEST CASE for C++
+    # ${LLVM_LINK_LIBS}
 )
 if (VCPKG_ROOT)
     vcpkg_link_libraries(Catch2WithMain)
