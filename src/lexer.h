@@ -15,6 +15,7 @@ enum Token {
     // primary
     tok_identifier = -4,
     tok_number = -5,
+    tok_hello = -6
 };
 
 extern std::string IdentifierStr;

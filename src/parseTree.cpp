@@ -6,6 +6,7 @@
 
 namespace {
 
+class FunctionAST; // Forward declaration
 /// ExprAST - Base class for all expression nodes.
 class ExprAST {
 public:
@@ -67,6 +68,7 @@ public:
       : Name(Name), Args(std::move(Args)) {}
 
   const std::string &getName() const { return Name; }
+  const std::vector<std::string> &getArgs() const { return Args; }
 };
 
 /// FunctionAST - This class represents a function definition itself.
@@ -78,12 +80,16 @@ public:
   FunctionAST(std::unique_ptr<PrototypeAST> Proto,
               std::unique_ptr<ExprAST> Body)
       : Proto(std::move(Proto)), Body(std::move(Body)) {}
-  double interpret() const {
-    return Body->interpret();
-  }
+  double interpret() const;
+  double interpretBody(const std::vector<double>& ArgVals);
+  const PrototypeAST* getProto() const { return Proto.get(); }
 };
 
 } // end anonymous namespace
+
+/// FunctionTable - This holds all the function definitions.
+static std::map<std::string, std::unique_ptr<FunctionAST>> FunctionTable;
+
 
 //===----------------------------------------------------------------------===//
 // Parser
@@ -302,8 +308,10 @@ static std::unique_ptr<PrototypeAST> ParseExtern() {
 //===----------------------------------------------------------------------===//
 
 static void HandleDefinition() {
-  if (ParseDefinition()) {
+  if (auto FnAST = ParseDefinition()) {
+    auto& FnName = FnAST->getProto()->getName();
     fprintf(stderr, "Parsed a function definition.\n");
+    FunctionTable[FnName] = std::move(FnAST);
   } else {
     // Skip token for error recovery.
     getNextToken();
@@ -347,6 +355,15 @@ static void MainLoop() {
       break;
     case tok_extern:
       HandleExtern();
+      break;
+    case tok_hello:
+      std::cout << "Welcome to My Compiler" << std::endl;
+      std::cout << "I will try do my compiler with C++." << std::endl;
+      for ( int i = 0 ; i < 3 ; i++){
+        std::cout << "TEST : CASE" << i << std::endl; 
+      }
+      std::cout << "use ; and enter for next line >>";
+      getNextToken(); 
       break;
     default:
       HandleTopLevelExpression();

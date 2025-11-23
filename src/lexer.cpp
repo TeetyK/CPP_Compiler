@@ -16,6 +16,7 @@ int gettok(){
         }
         if(IdentifierStr=="def"){return tok_def;}
         if(IdentifierStr=="extern"){return tok_extern;}
+        if(IdentifierStr=="Hello"){return tok_hello;}
         return tok_identifier;
     }
     if(isdigit(LastChar) || LastChar == '.'){ // Number : [0-9.]+
