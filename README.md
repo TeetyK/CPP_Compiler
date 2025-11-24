@@ -35,4 +35,26 @@ TEST_CASE("Compiler Core - Basic Arithmetic", "[core][math]") {
 All tests passed (3 assertions in 1 test case)
 
 ```
+# Display TEST
+
+```bash
+>.\Debug\program_main.exe test.ttt --optimize 3
+Randomness seeded to: 2304627225
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+--- Project Configuration ---
+Tests Passed successfully.
+Input File: test.ttt
+Optimization Level: O3
+Compiler is ready to process test.ttt
+TTT> def sum(a b) a+b;
+TTT> Parsed a function definition.
+TTT> sum(10,10);
+TTT> Parsed a top-level expr
+Intepret Result: 20
+```
+# SUPPORT FEATURE
+support -> function ,basic operations
+not support -> if then else , for in 
 
